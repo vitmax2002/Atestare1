@@ -19,12 +19,13 @@ public class OperatiiController {
 //        return "suma";
 //    }
     @GetMapping("/add")
-    public String adunarea(Model model, @RequestParam("first") String first, @RequestParam("second") int second){
+    public String adunarea(Model model, @RequestParam("first") String first, @RequestParam("second") int second,@RequestParam("third") int third){
         try {
             int firstNum = Integer.parseInt(first);
-            int sum=firstNum+second;
+            int sum=firstNum+second+third;
             model.addAttribute("first", firstNum);
             model.addAttribute("second", second);
+            model.addAttribute("third", third);
             model.addAttribute("sum", sum);
             return "suma";
         } catch (NumberFormatException e) {
